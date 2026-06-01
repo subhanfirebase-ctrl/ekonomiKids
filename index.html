@@ -5,38 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kota Tabungan - Game Ekonomi Anak</title>
     <script src="https://tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Fredoka', sans-serif; }
+        .button-3d {
+            box-shadow: 0 8px 0 #d97706;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .button-3d:active {
+            transform: translateY(8px);
+            box-shadow: 0 0px 0 #d97706;
+        }
+        .card-3d {
+            box-shadow: 0 16px 0 #1e3a8a, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
     </style>
 </head>
-<body class="bg-gradient-to-b from-sky-400 to-blue-600 min-h-screen flex items-center justify-center p-4">
-    
-    <div class="max-w-md w-full bg-white rounded-3xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.3)] text-center border-4 border-yellow-300 relative overflow-hidden">
+<body class="bg-gradient-to-b from-sky-400 via-sky-300 to-blue-500 min-h-screen flex flex-col items-center justify-center p-4 overflow-x-hidden">
+
+    <div class="absolute top-10 left-[-10%] w-48 h-16 bg-white rounded-full opacity-60 filter blur-sm animate-pulse"></div>
+    <div class="absolute top-32 right-[-5%] w-64 h-20 bg-white rounded-full opacity-60 filter blur-sm"></div>
+
+    <div class="max-w-md w-full bg-white rounded-[2.5rem] p-8 text-center border-4 border-blue-900 card-3d relative z-10">
         
-        <div class="absolute -top-10 -left-10 w-32 h-32 bg-sky-100 rounded-full opacity-50 blur-xl"></div>
-        <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-yellow-100 rounded-full opacity-50 blur-xl"></div>
-
-        <div class="relative z-10">
-            <div class="w-32 h-32 bg-gradient-to-tr from-yellow-300 to-amber-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg border-4 border-white animate-bounce">
-                <span class="text-6xl">🚲</span>
-            </div>
-
-            <h1 class="text-4xl font-black text-blue-600 tracking-wide mb-3 drop-shadow-sm">
-                Kota Tabungan
-            </h1>
-            
-            <p class="text-gray-600 text-base mb-8 leading-relaxed font-medium bg-blue-50/50 p-4 rounded-2xl border border-blue-100">
-                Misimu adalah mengumpulkan uang jajan untuk membeli <span class="text-blue-600 font-bold">Sepeda Impian seharga Rp 100.000</span> dalam waktu 7 hari! 
-                <br><br>
-                Bisakah kamu membedakan <span class="text-green-600 font-bold">Kebutuhan</span> & <span class="text-red-500 font-bold">Keinginan</span>?
-            </p>
-
-            <a href="game.html" class="inline-block w-full bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-500 hover:to-yellow-500 text-blue-900 font-extrabold text-xl py-4 px-6 rounded-2xl shadow-[0_8px_0_#d97706] hover:shadow-[0_6px_0_#d97706] active:shadow-none transform active:translate-y-[8px] transition-all duration-100 text-center uppercase tracking-wider">
-                🎮 Mulai Petualangan!
-            </a>
+        <div class="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-yellow-400 border-4 border-blue-900 px-6 py-1 rounded-full shadow-md">
+            <span class="text-blue-900 font-black tracking-wider text-sm uppercase">🎮 MINI GAME</span>
         </div>
+
+        <div class="relative w-36 h-36 mx-auto mb-6 mt-2">
+            <div class="absolute inset-0 bg-amber-100 rounded-full border-4 border-dashed border-amber-400 animate-spin-slow"></div>
+            <div class="absolute inset-2 bg-gradient-to-tr from-yellow-400 to-amber-300 rounded-full flex items-center justify-center border-4 border-blue-900 shadow-md">
+                <span class="text-7xl drop-shadow-[0_4px_0_rgba(0,0,0,0.15)]">🚲</span>
+            </div>
+        </div>
+
+        <h1 class="text-4xl font-black text-blue-600 tracking-wide mb-2 drop-shadow-[0_3px_0_#1e3a8a] text-stroke">
+            KOTA TABUNGAN
+        </h1>
+        <p class="text-amber-500 font-extrabold text-lg tracking-widest uppercase mb-4">Petualangan Finansial Cilik</p>
+        
+        <div class="text-gray-700 text-sm font-medium mb-8 leading-relaxed bg-gradient-to-br from-blue-50 to-indigo-50/50 p-5 rounded-3xl border-2 border-blue-100 text-left relative">
+            <div class="absolute top-3 right-3 text-xl opacity-30">📋</div>
+            <p class="font-bold text-blue-900 mb-1 text-base">Misimu:</p>
+            Mengumpulkan uang jajan harian untuk membeli <span class="text-blue-600 font-extrabold">Sepeda Impian seharga Rp 100.000</span> dalam waktu 7 hari saja!
+            <br><br>
+            Kamu harus pintar memilih antara <span class="text-emerald-600 font-extrabold">Kebutuhan Penting</span> atau <span class="text-rose-500 font-extrabold">Keinginan Sesaat</span>. Jangan sampai tabunganmu habis!
+        </div>
+
+        <a href="game.html" class="button-3d block w-full bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-500 hover:to-yellow-500 text-blue-950 font-black text-xl py-4 px-6 rounded-2xl border-2 border-blue-900 uppercase tracking-wider text-center">
+            🚀 Mulai Bermain!
+        </a>
+
     </div>
+
+    <p class="text-white/80 font-bold text-xs mt-8 tracking-wide drop-shadow">
+        © 2026 Kota Tabungan. Dibuat dengan Cinta untuk Anak Indonesia.
+    </p>
 
 </body>
 </html>
